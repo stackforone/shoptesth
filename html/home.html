@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
+    <title>Fashion Page</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            padding-top: 20px;
+        }
+        
+        /* Top Bar styling */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .top-bar .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .top-bar .right {
+            font-size: 14px;
+        }
+        
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar img {
+            height: 30px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            align-items: center;
+        }
+        .menu a {
+            color: #000;
+            text-decoration: none;
+        }
+        .search-button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Carousel styling */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-images img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-nav button {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Category section styling */
+        .category-section {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .category-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 150px;
+            flex: none;
+            text-align: center;
+        }
+        .category-card img {
+            width: 100%;
+            height: auto;
+        }
+        .category-card p {
+            margin: 0;
+            padding: 10px;
+            font-size: 14px;
+        }
+  
+        .menu2 {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu2 a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .menu2 a i {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+     <div class="menu2">
+            <a href="home.html">
+                <i class="las la-home fs-20 opacity-60"></i> Mall
+            </a>
+            <a href="dashboard.html">
+                <i class="las la-tachometer-alt fs-20 opacity-60"></i> ควบคุม
+            </a>
+            <a href="shop.html">
+                <i class="las la-shopping-bag la-2x text-white"></i> รถเข็น
+            </a>
+            <a href="#">
+                <i class="las la-bell fs-20 opacity-60"></i> การแจ้งเตือน
+            </a>
+            <a href="menu.html">
+                <i class=" las la-user"></i> ฉัน
+            </a>
+        </div>
+    
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/24px-Flag_of_Thailand.svg.png" alt="Thailand Flag">
+            <span>Thailand</span>
+        </div>
+        <div class="right">
+            Thai Baht ฿
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="logo.png" alt="Logo">
+        <button class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Menu Links -->
+    
+
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <div class="carousel-images" id="carousel-images">
+            <img src="https://via.placeholder.com/800x400/ff7f7f" alt="Slide 1">
+            <img src="https://via.placeholder.com/800x400/7f7fff" alt="Slide 2">
+            <img src="https://via.placeholder.com/800x400/7fff7f" alt="Slide 3">
+        </div>
+        <div class="carousel-nav">
+            <button onclick="prevSlide()">❮</button>
+            <button onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="category-section" id="category-section">
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150" alt="แฟชั่น">
+            <p>เสื้อผ้าและแฟชั่น</p>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150" alt="แฟชั่น">
+            <p>เสื้อผ้าและแฟชั่น</p>
+        </div>
+        <div class="category-card">
+            <img src="https://via.placeholder.com/150" alt="กีฬา">
+            <p>กีฬาและกลางแจ้ง</p>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function loadImages() {
+            // Load carousel images from localStorage
+            const carouselImagesData = JSON.parse(localStorage.getItem('carouselImages'));
+            const carouselContainer = document.getElementById('carousel-images');
+            carouselContainer.innerHTML = '';
+
+            if (carouselImagesData && carouselImagesData.length > 0) {
+                carouselImagesData.forEach(image => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image.src;
+                    carouselContainer.appendChild(imgElement);
+                });
+            } else {
+                // Fallback images if no carousel images are uploaded
+                carouselContainer.innerHTML = `
+                    <img src="https://via.placeholder.com/800x400/ff7f7f" alt="Slide 1">
+                    <img src="https://via.placeholder.com/800x400/7f7fff" alt="Slide 2">
+                    <img src="https://via.placeholder.com/800x400/7fff7f" alt="Slide 3">
+                `;
+            }
+
+            // Load category images from localStorage
+            const categoryImagesData = JSON.parse(localStorage.getItem('categoryImages'));
+            const categorySection = document.getElementById('category-section');
+            categorySection.innerHTML = '';
+
+            if (categoryImagesData && categoryImagesData.length > 0) {
+                categoryImagesData.forEach(image => {
+                    const card = document.createElement('div');
+                    card.className = 'category-card';
+                    card.innerHTML = `<img src="${image.src}" alt="Category Image"><p>Category</p>`;
+                    categorySection.appendChild(card);
+                });
+            } else {
+                // Fallback category cards if no images are uploaded
+                categorySection.innerHTML = `
+                    <div class="category-card">
+                        <img src="https://via.placeholder.com/150" alt="Default Category Image">
+                        <p>เสื้อผ้าและแฟชั่น</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://via.placeholder.com/150" alt="Default Category Image">
+                        <p>เสื้อผ้าและแฟชั่น</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://via.placeholder.com/150" alt="Default Category Image">
+                        <p>กีฬาและกลางแจ้ง</p>
+                    </div>
+                `;
+            }
+        }
+
+        function showSlide(index) {
+            const carouselImages = document.getElementById('carousel-images');
+            const totalSlides = carouselImages.children.length;
+            currentIndex = (index + totalSlides) % totalSlides;
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        // Auto-slide every 3 seconds
+        setInterval(nextSlide, 3000);
+
+        // Load images on page load
+        loadImages();
+    </script>
+</body>
+</html>
